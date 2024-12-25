@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import logo from '../assets/icons8-archeology-48.png'
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
@@ -55,7 +55,7 @@ const Header = () => {
        <div className="dropdown dropdown-bottom ">
   <div tabIndex={0} role="button" className=" m-1">My Profile</div>
   <ul tabIndex={0} className="dropdown-content menu bg-slate-500 rounded-box z-[1] w-52 p-2 shadow">
-    <li><a>Item 1</a></li>
+    <li><Link to={`myAddedArtifacts/${createdBy}`}>My Added Artifacts</Link></li>
     <li><a>Item 2</a></li>
   </ul>
 </div>
@@ -72,7 +72,7 @@ const Header = () => {
       <div className="dropdown dropdown-bottom ">
   <div tabIndex={0} role="button" className=" m-1">My Profile</div>
   <ul tabIndex={0} className="dropdown-content menu bg-slate-500 rounded-box z-[1] w-52 p-2 shadow">
-    <li><a>Item 1</a></li>
+  <li><Link to={`myAddedArtifacts/${createdBy}`}>My Added Artifacts</Link></li>
     <li><a>Item 2</a></li>
   </ul>
 </div>
