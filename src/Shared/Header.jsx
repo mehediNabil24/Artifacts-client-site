@@ -1,17 +1,20 @@
 import { NavLink, useLoaderData } from "react-router-dom";
 import logo from '../assets/icons8-archeology-48.png'
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthProvider";
+import { FaUserLarge } from "react-icons/fa6";
 // import { useContext } from "react";
 // import { AuthContext } from "./AuthProvider";
 // import { FaUserLarge } from "react-icons/fa6";
 
 
 const Header = () => {
-    // const {user,logOut} = useContext(AuthContext)
+    const {user,logOut} = useContext(AuthContext)
 
-    // const createdBy = user?.email;
-    // const email = user?.email;
+    const createdBy = user?.email;
+    const email = user?.email;
     
-//    console.log(user)
+   console.log(user)
     const links =
     <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -76,7 +79,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  {/* < div className='flex items-center justify-center gap-2'>
+  < div className='flex items-center justify-center gap-2'>
             <div>
                 {
                     user?.email? <div className='flex flex-col items-center justify-center mr-2 '>
@@ -98,8 +101,8 @@ const Header = () => {
                 
                
 
-            </div> */}
-            <button>Log IN </button>
+            </div>
+            
   </div>
 </div>
       </div>
