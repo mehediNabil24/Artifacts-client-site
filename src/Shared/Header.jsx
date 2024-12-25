@@ -18,8 +18,8 @@ const Header = () => {
     const links =
     <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/allVisa'}>All Visas</NavLink></li>
-        <li><NavLink to={'/addVisa'}>Add Visa</NavLink></li>
+        <li><NavLink to={'/allArtifacts'}>All Artifacts</NavLink></li>
+        <li><NavLink to={'/addArtifacts'}>Add Artifact</NavLink></li>
         
         {/* <li><NavLink to={`/myAddedVisa/${createdBy}`}>My Added Visas</NavLink></li>
         <li><NavLink to={`/myApplication/${email}`}>My Visa Application</NavLink></li> */}

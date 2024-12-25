@@ -7,10 +7,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from './Layout/Layout.jsx';
-import Home from './Pages/Home.jsx';
+import Home from './Pages/Home/Home.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './Shared/Login.jsx';
 import Register from './Shared/Register.jsx';
+import AddArtifacts from './Pages/AddArtifacts.jsx';
+import AllArtifacts from './Pages/AllArtifacts/AllArtifacts.jsx';
+import ArtifactDetails from './Pages/ArtifactDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +32,19 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element :<Register></Register> 
+      },
+      {
+        path: '/addArtifacts',
+        element: <AddArtifacts></AddArtifacts>
+      },
+      {
+        path: '/artifactDetails/:id',
+        element: <ArtifactDetails></ArtifactDetails>,
+        loader:({params})=> fetch(`http://localhost:5000/artifacts/${params.id}`)
+      },
+      {
+        path: '/allArtifacts',
+        element: <AllArtifacts></AllArtifacts>
       }
     ]
   },
