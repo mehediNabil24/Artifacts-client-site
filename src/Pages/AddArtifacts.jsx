@@ -4,10 +4,12 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 const AddArtifacts = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
     const auth = getAuth();
     const user = auth.currentUser;
+    console.log(user);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
 
     const form = e.target;
     const artifactName = form.artifactName.value;
@@ -31,6 +33,7 @@ const AddArtifacts = () => {
     //   addedByName: user.displayName,
     //   addedByEmail: user.email,
       addedAt: new Date().toISOString(),
+      createdBy : user.email
     };
 
     console.log(newArtifact);
@@ -150,15 +153,15 @@ const AddArtifacts = () => {
           <div className="md:w-1/2">
             <input
               className="input input-bordered w-full"
-            //   value={user?.displayName || ''}
+            //   value={user.displayName || ''}
               placeholder="Your Name"
-              readOnly
+              
             />
           </div>
           <div className="md:w-1/2">
             <input
               className="input input-bordered w-full"
-            //   value={user?.email || ''}
+              defaultValue={user?.email || ''}
               placeholder="Your Email"
               readOnly
             />
