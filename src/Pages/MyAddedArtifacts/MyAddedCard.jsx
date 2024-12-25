@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyAddedCard = ({artifacts,artifact,setArtifacts}) => {
     const {_id,artifactName,artifactImage,historicalContext, artifactType} =artifact;
+    const navigate = useNavigate();
     const handleSubmit =e=>{
         e.preventDefault();
 
@@ -90,6 +92,7 @@ const MyAddedCard = ({artifacts,artifact,setArtifacts}) => {
                       text: "Your file has been deleted.",
                       icon: "success",
                     });
+                    navigate('/allArtifacts')
                   }
                 })
                 .catch((error) => {
@@ -218,7 +221,7 @@ const MyAddedCard = ({artifacts,artifact,setArtifacts}) => {
 
        
 
-        <input className="btn btn-block" type="submit" value="Add Artifact" />
+        <input className="btn btn-block" type="submit" value="Update Artifact" />
       </form>
               </div>
             </div>
