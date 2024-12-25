@@ -15,6 +15,7 @@ import AddArtifacts from './Pages/AddArtifacts.jsx';
 import AllArtifacts from './Pages/AllArtifacts/AllArtifacts.jsx';
 import ArtifactDetails from './Pages/ArtifactDetails.jsx';
 import MyAddedArtifacts from './Pages/MyAddedArtifacts/MyAddedArtifacts.jsx';
+import LikedArtifacts from './Pages/LikedArtifacts/LikedArtifacts.jsx';
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         path:'/myAddedArtifacts/:createdBy',
         element: <MyAddedArtifacts></MyAddedArtifacts>,
         loader:({params})=> fetch(`http://localhost:5000/artifacts/email/${params.createdBy}`)
+      },
+      {
+        path: '/likedArtifacts/:email',
+        element: <LikedArtifacts></LikedArtifacts>,
+        loader: ({params})=> fetch(`http://localhost:5000/users/${params.email}`)
       }
     ]
   },

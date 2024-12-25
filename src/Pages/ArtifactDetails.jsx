@@ -37,6 +37,7 @@ const ArtifactDetails = () => {
                     email: user?.email, // Logged-in user's email
                     artifactId: _id, // Current artifact ID
                     artifactName: artifactName,
+                    artifactImage: artifactImage
                 }),
             });
 

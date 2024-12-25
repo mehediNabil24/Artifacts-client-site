@@ -55,8 +55,8 @@ const Header = () => {
        <div className="dropdown dropdown-bottom ">
   <div tabIndex={0} role="button" className=" m-1">My Profile</div>
   <ul tabIndex={0} className="dropdown-content menu bg-slate-500 rounded-box z-[1] w-52 p-2 shadow">
-    <li><Link to={`myAddedArtifacts/${createdBy}`}>My Added Artifacts</Link></li>
-    <li><a>Item 2</a></li>
+    <li><Link to={`/myAddedArtifacts/${createdBy}`}>My Added Artifacts</Link></li>
+    <li><Link to={`/likedArtifacts/${email}`}>Liked Artifacts</Link></li>
   </ul>
 </div>
       </ul>
@@ -73,7 +73,7 @@ const Header = () => {
   <div tabIndex={0} role="button" className=" m-1">My Profile</div>
   <ul tabIndex={0} className="dropdown-content menu bg-slate-500 rounded-box z-[1] w-52 p-2 shadow">
   <li><Link to={`myAddedArtifacts/${createdBy}`}>My Added Artifacts</Link></li>
-    <li><a>Item 2</a></li>
+  <li><Link to={`/likedArtifacts/${email}`}>Liked Artifacts</Link></li>
   </ul>
 </div>
     </ul>
