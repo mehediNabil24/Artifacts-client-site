@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import Banner from './Banner';
 import { NavLink } from 'react-router-dom';
 import ArtifactCard from '../ArtifactCard';
+import Features from './Features';
+import InfoSection from './InfoSection';
 
 const Home = () => {
     const [artifacts, setArtifacts] = useState()
@@ -16,7 +18,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="grid md:grid-cols-3 grid-cols-1 gap-10 my-8 md:p-16 p-4">
+           <div>
+           <div className="grid md:grid-cols-3 grid-cols-1 gap-10 my-8 md:p-16 p-4">
                 {artifacts?.slice(0, 6).map(artifact => (
                     <ArtifactCard key={artifact._id} artifact={artifact} />
                 ))}
@@ -24,6 +27,9 @@ const Home = () => {
             <div className="flex items-center justify-center">
                 <NavLink to={'/allArtifacts'} className={'btn btn-success'}>See All Artifacts</NavLink>
             </div>
+           </div>
+           <Features></Features>
+           <InfoSection></InfoSection>
             
         </div>
     );
