@@ -1,8 +1,11 @@
 Historical Artifacts Tracker
+
 Purpose
+
 The Historical Artifacts Tracker is a web application designed to allow users to explore, add, and like historical artifacts. Users can contribute by adding new artifacts, view details about each artifact, and keep track of their personal contributions. This project aims to provide a platform for history enthusiasts and researchers to interact with and manage historical artifacts in an engaging and user-friendly manner.
 
 ###Live URL
+
 https://fardin-newspaper.web.app/
 
 ###Key Features
@@ -26,10 +29,17 @@ Toast Notifications: Display notifications for various actions like adding, upda
 ###npm Packages Used
 
 react: A JavaScript library for building user interfaces.
+
 react-router-dom: Used for routing within the application.
+
 firebase: Firebase Authentication for secure login and user management.
+
 axios: For making HTTP requests to the backend.
+
 react-toastify: For displaying toast notifications.
+
 tailwindcss: A utility-first CSS framework for styling the application.
+
 sweetalert2: For displaying styled alerts in the app.
+
 jsonwebtoken: For handling JWT token authentication.
