@@ -28,7 +28,7 @@ const ArtifactDetails = () => {
     try {
         if (!isFavorite) {
             // Add to favorites
-            const response = await fetch(`http://localhost:5000/users/favorites`, {
+            const response = await fetch(`https://artifacts-server-site.vercel.app/users/favorites`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const ArtifactDetails = () => {
             }
         } else {
             // Remove from favorites
-            const response = await fetch(`http://localhost:5000/users/favorites`, {
+            const response = await fetch(`https://artifacts-server-site.vercel.app/users/favorites`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

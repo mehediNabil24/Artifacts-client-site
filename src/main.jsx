@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: '/artifactDetails/:id',
         element: <PrivateRoutes><ArtifactDetails></ArtifactDetails></PrivateRoutes>,
-        loader:({params})=> fetch(`http://localhost:5000/artifacts/${params.id}`)
+        loader:({params})=> fetch(`https://artifacts-server-site.vercel.app/artifacts/${params.id}`)
       },
       {
         path: '/allArtifacts',
@@ -52,12 +52,12 @@ const router = createBrowserRouter([
       {
         path:'/myAddedArtifacts/:createdBy',
         element: <PrivateRoutes><MyAddedArtifacts></MyAddedArtifacts></PrivateRoutes>,
-        loader:({params})=> fetch(`http://localhost:5000/artifacts/email/${params.createdBy}`)
+        loader:({params})=> fetch(`https://artifacts-server-site.vercel.app/artifacts/email/${params.createdBy}`)
       },
       {
         path: '/likedArtifacts/:email',
         element: <PrivateRoutes><LikedArtifacts></LikedArtifacts></PrivateRoutes>,
-        // loader: ({params})=> fetch(`http://localhost:5000/users/${params.email}`)
+        // loader: ({params})=> fetch(`https://artifacts-server-site.vercel.app/users/${params.email}`)
       }
     ]
   },

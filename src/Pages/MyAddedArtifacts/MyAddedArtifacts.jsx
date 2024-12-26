@@ -12,7 +12,7 @@ const MyAddedArtifacts = () => {
 
     // useEffect(() => {
     //     if (createdBy) {
-    //         axios.get(`http://localhost:5000/artifacts/email/${createdBy}`, { withCredentials: true })
+    //         axios.get(`https://artifacts-server-site.vercel.app/artifacts/email/${createdBy}`, { withCredentials: true })
     //         .then(res => {
     //             setArtifacts(res.data);
     //             console.log("Artifacts fetched:", res.data);

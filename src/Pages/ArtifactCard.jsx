@@ -11,7 +11,7 @@ const ArtifactCard = ({ artifact }) => {
     useEffect(() => {
         const fetchFavoriteCount = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/artifacts/${_id}/favorites-count`);
+                const response = await fetch(`https://artifacts-server-site.vercel.app/artifacts/${_id}/favorites-count`);
                 const data = await response.json();
                 if (response.ok) {
                     setFavoriteCount(data.count);

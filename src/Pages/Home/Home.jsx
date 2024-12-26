@@ -9,7 +9,7 @@ import InfoSection from './InfoSection';
 const Home = () => {
     const [artifacts, setArtifacts] = useState()
     useEffect(()=>{
-        fetch('http://localhost:5000/artifacts')
+        fetch('https://artifacts-server-site.vercel.app/artifacts')
         .then(res=>res.json())
         .then(data=>{
             setArtifacts(data)

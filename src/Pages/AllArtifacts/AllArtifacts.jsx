@@ -5,7 +5,7 @@ const AllArtifacts = () => {
     const [artifacts, setArtifacts] = useState()
     const [search,setSearch]=useState('')
         useEffect(()=>{
-            fetch(`http://localhost:5000/artifacts?searchParam=${search}`)
+            fetch(`https://artifacts-server-site.vercel.app/artifacts?searchParam=${search}`)
             .then(res=>res.json())
             .then(data=>{
                 setArtifacts(data)

@@ -18,10 +18,10 @@ const LikedArtifacts = () => {
         //     setJobs(data)
 
         // })
-        axios.get(`http://localhost:5000/users/${user.email}`,{withCredentials:true})
+        axios.get(`https://artifacts-server-site.vercel.app/users/${user.email}`,{withCredentials:true})
         .then(res=>console.log(setArtifacts(res.data)))
     },[user.email]);
-    // axiosSecure.get(`/http://localhost:5000/users/${user.email}`)
+    // axiosSecure.get(`/https://artifacts-server-site.vercel.app/users/${user.email}`)
     // .then(res=>setArtifacts(res.data));
 // );
     return (

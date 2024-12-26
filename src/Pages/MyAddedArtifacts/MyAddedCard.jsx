@@ -41,7 +41,7 @@ const MyAddedCard = ({artifacts,artifact,setArtifacts}) => {
       
 
       
-      fetch(`http://localhost:5000/artifacts/${_id}`,{
+      fetch(`https://artifacts-server-site.vercel.app/artifacts/${_id}`,{
         method:'PUT',
         headers: {
             'content-type':'application/json'
@@ -80,7 +80,7 @@ const MyAddedCard = ({artifacts,artifact,setArtifacts}) => {
             confirmButtonText: "Yes, delete it!",
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:5000/artifacts/${_id}`, {
+              fetch(`https://artifacts-server-site.vercel.app/artifacts/${_id}`, {
                 method: "DELETE",
               })
                 .then((res) => res.json())

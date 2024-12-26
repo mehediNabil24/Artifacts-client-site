@@ -38,7 +38,7 @@ const AddArtifacts = () => {
 
     console.log(newArtifact);
 
-    fetch('http://localhost:5000/artifacts', {
+    fetch('https://artifacts-server-site.vercel.app/artifacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

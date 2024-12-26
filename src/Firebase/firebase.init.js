@@ -6,12 +6,13 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAS4ofu0ZBzXQD8OQR92Q1DdwXJ6Z3dXPM",
-  authDomain: "fardin-newspaper.firebaseapp.com",
-  projectId: "fardin-newspaper",
-  storageBucket: "fardin-newspaper.firebasestorage.app",
-  messagingSenderId: "580174105271",
-  appId: "1:580174105271:web:23a9c86c635d74c9129b32"
+apiKey: import.meta.env.VITE_apiKey,
+authDomain: import.meta.env.VITE_authDomain,
+projectId: import.meta.env.VITE_projectId,
+storageBucket: import.meta.env.VITE_storageBucket,
+messagingSenderId: import.meta.env.VITE_messagingSenderId,
+appId: import.meta.env.VITE_appId,
+
 };
 
 // Initialize Firebase
