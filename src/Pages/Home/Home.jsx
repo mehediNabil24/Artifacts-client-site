@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import ArtifactCard from '../ArtifactCard';
 import Features from './Features';
 import InfoSection from './InfoSection';
+// import FeaturedArtifacts from './FeaturedArtifacts';
 
 const Home = () => {
     const [artifacts, setArtifacts] = useState()
@@ -29,6 +30,7 @@ const Home = () => {
             </div>
            </div>
            <Features></Features>
+           {/* <FeaturedArtifacts></FeaturedArtifacts> */}
            <InfoSection></InfoSection>
             
         </div>
