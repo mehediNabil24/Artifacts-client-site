@@ -17,12 +17,14 @@ import ArtifactDetails from './Pages/ArtifactDetails.jsx';
 import MyAddedArtifacts from './Pages/MyAddedArtifacts/MyAddedArtifacts.jsx';
 import LikedArtifacts from './Pages/LikedArtifacts/LikedArtifacts.jsx';
 import PrivateRoutes from './Context/PrivateRoutes.jsx';
+import ErrorPage from './Context/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

@@ -108,7 +108,7 @@ const MyAddedCard = ({artifacts,artifact,setArtifacts}) => {
     return (
         <div className="card bg-base-100  shadow-xl">
         <figure>
-          <img src={artifactImage} alt="Visa pic" />
+          <img className='w-full h-[350px] object-cover' src={artifactImage} alt="Visa pic" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
