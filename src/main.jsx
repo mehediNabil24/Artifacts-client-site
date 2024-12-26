@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: '/likedArtifacts/:email',
         element: <PrivateRoutes><LikedArtifacts></LikedArtifacts></PrivateRoutes>,
-        loader: ({params})=> fetch(`http://localhost:5000/users/${params.email}`)
+        // loader: ({params})=> fetch(`http://localhost:5000/users/${params.email}`)
       }
     ]
   },
