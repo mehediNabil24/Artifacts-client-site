@@ -9,7 +9,7 @@ const LikedArtifactCard = ({ artifact }) => {
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure>
-                <img src={artifactImage} alt={artifactName} />
+                <img className='aspect-[3/4] object-cover' src={artifactImage} alt={artifactName} />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">
