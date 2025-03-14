@@ -1,16 +1,11 @@
 import React from "react";
 import logo from "../assets/icons8-archeology-96.png";
-import Header from"./Header"
-import { Outlet } from "react-router-dom";
 
 const Footer = () => {
   return (
 
-    <div className='min-h-screen flex flex-col'>
-      <Header></Header>
-      <main className="flex-1">
-       <Outlet></Outlet>
-      </main>
+    <div>
+      
     <footer className="footer bg-base-200 text-base-content p-10">
       <aside>
         <img src={logo} alt="" />

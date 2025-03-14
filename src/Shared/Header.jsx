@@ -25,7 +25,7 @@ const Header = () => {
   );
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md backdrop-blur-md ">
+    <div className="fixed top-0 left-0 w-full z-50 bg-[#F0EBE3] shadow-md backdrop-blur-md bg-opacity-10 ">
       <div className="w-11/12 mx-auto">
         <div className="navbar text-gray-800 p-3">
           <div className="navbar-start">

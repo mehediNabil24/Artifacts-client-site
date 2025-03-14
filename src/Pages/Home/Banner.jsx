@@ -2,8 +2,9 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import styles
-import image2 from "../../assets/clock.jpg";
+import image2 from "../../assets/photos-256889_1280.jpg";
 import image1 from "../../../public/slide1.jpg";
+import image3 from '../../../public/vidar-nordli-mathisen-Y8Xh7ZJFU5A-unsplash(1).jpg'
 
 const images = [
   {
@@ -16,6 +17,11 @@ const images = [
     title: "Preserve Cultural Heritage",
     subtitle: "A glimpse into the lives of our ancestors",
   },
+  {
+    src: image3,
+    title: "See The Ancient World",
+    subtitle: "We Come From Our Ancestor"
+  }
 
 ];
 

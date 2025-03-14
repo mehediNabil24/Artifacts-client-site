@@ -35,23 +35,23 @@ const ArtifactCard = ({ artifact }) => {
       whileTap={{ scale: 0.98 }}
     >
       {/* Image Section */}
-      <div className="relative">
+      <div className="relative ">
         <motion.img
           src={artifactImage}
           alt={artifactName}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-cover p-6 rounded-3xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <div className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
+        <div className="absolute top-4 right-6 bg-white p-2 rounded-md flex items-center shadow-md">
           <FaHeart className="text-red-500 text-lg" />
           <span className="text-sm text-gray-600 ml-1">{favoriteCount}</span>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="p-4">
+      <div className="p-6">
         <h2 className="text-lg font-bold text-gray-800">{artifactName}</h2>
         <p className="text-gray-600 text-sm mt-2 line-clamp-2">
           {historicalContext}
@@ -61,7 +61,7 @@ const ArtifactCard = ({ artifact }) => {
         <div className="mt-4 flex justify-between items-center">
           <NavLink
             to={`/artifactDetails/${_id}`}
-            className="flex items-center bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md transition-all hover:bg-blue-600"
+            className="flex items-center bg-[#F0EBE3] text-black  px-4 py-2 rounded-lg shadow-md transition-all hover:bg-[#F6F5F2]"
           >
             View Details <FaArrowRight className="ml-2" />
           </NavLink>
