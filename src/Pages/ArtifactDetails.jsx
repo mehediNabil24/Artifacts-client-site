@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'; // Importing React Icons
-import { AuthContext } from '../Context/AuthProvider';
+import React, { useContext, useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"; // Importing React Icons
+import { AuthContext } from "../Context/AuthProvider";
 
 const ArtifactDetails = () => {
-    const {user} =useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const {
     _id,
     artifactImage,
@@ -18,59 +18,90 @@ const ArtifactDetails = () => {
     presentLocation,
   } = useLoaderData();
 
+  // State to manage favorite count
+    const [favoriteCount, setFavoriteCount] = useState(0);
+  
+    // Fetch favorite count when the component mounts
+    useEffect(() => {
+      const fetchFavoriteCount = async () => {
+        try {
+          const response = await fetch(
+            `https://artifacts-server-site.vercel.app/artifacts/${_id}/favorites-count`
+          );
+          const data = await response.json();
+          if (response.ok) {
+            setFavoriteCount(data.count);
+          } else {
+            console.error("Error fetching favorite count:", data.message);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      };
+  
+      fetchFavoriteCount();
+    }, [_id]);
+  
+
   // State for toggling the favorite icon
   const [isFavorite, setIsFavorite] = useState(false);
 
   // Function to handle toggle
-  const handleToggleFavorite = async() => {
+  const handleToggleFavorite = async () => {
     setIsFavorite(!isFavorite);
 
     try {
-        if (!isFavorite) {
-            // Add to favorites
-            const response = await fetch(`https://artifacts-server-site.vercel.app/users/favorites`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: user?.email, // Logged-in user's email
-                    artifactId: _id, // Current artifact ID
-                    artifactName: artifactName,
-                    artifactImage: artifactImage
-                }),
-            });
+      if (!isFavorite) {
+        // Add to favorites
+        const response = await fetch(
+          `https://artifacts-server-site.vercel.app/users/favorites`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: user?.email, // Logged-in user's email
+              artifactId: _id, // Current artifact ID
+              artifactName: artifactName,
+              artifactImage: artifactImage,
+            }),
+          }
+        );
 
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Added to favorites:', data);
-                setIsFavorite(true); // Update the UI state
-            } else {
-                console.error('Error adding to favorites:', data.message);
-            }
+        const data = await response.json();
+        if (response.ok) {
+          console.log("Added to favorites:", data);
+          setIsFavorite(true); // Update the UI state
         } else {
-            // Remove from favorites
-            const response = await fetch(`https://artifacts-server-site.vercel.app/users/favorites`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: user?.email, // Logged-in user's email
-                    artifactId: _id, // Current artifact ID
-                }),
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Removed from favorites:', data);
-                setIsFavorite(false); // Update the UI state
-            } else {
-                console.error('Error removing from favorites:', data.message);
-            }
+          console.error("Error adding to favorites:", data.message);
         }
+      } else {
+        // Remove from favorites
+        const response = await fetch(
+          `https://artifacts-server-site.vercel.app/users/favorites`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: user?.email, // Logged-in user's email
+              artifactId: _id, // Current artifact ID
+            }),
+          }
+        );
+
+        const data = await response.json();
+        if (response.ok) {
+          console.log("Removed from favorites:", data);
+          setIsFavorite(false); // Update the UI state
+        } else {
+          console.error("Error removing from favorites:", data.message);
+        }
+      }
     } catch (error) {
-        console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -78,7 +109,6 @@ const ArtifactDetails = () => {
     <div className="bg-gray-100 min-h-screen flex justify-center items-center p-8">
       <div className="max-w-4xl bg-white rounded-lg shadow-lg p-6 relative">
         {/* Favorite Icon */}
-       
 
         {/* Artifact Image */}
         <div className="flex justify-center">
@@ -90,26 +120,28 @@ const ArtifactDetails = () => {
         </div>
 
         {/* Artifact Information */}
-        <div className="mt-6 flex justify-between items-center" >
+        <div className="mt-6 flex justify-between items-center">
           <div>
-          <h1 className="text-3xl font-bold text-gray-800">{artifactName}</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Added on: {new Date(addedAt).toLocaleDateString()}
-          </p>
+          <p className="text-gray-500">❤️ {favoriteCount}</p>
+            <h1 className="text-3xl font-bold text-gray-800">{artifactName}</h1>
+            
+            <p className="text-sm text-gray-500 mt-1">
+              Added on: {new Date(addedAt).toLocaleDateString()}
+            </p>
           </div>
           <div>
             {/* Favorite Icon */}
-        <button
-          onClick={handleToggleFavorite}
-          className=" text-2xl text-gray-500 hover:text-red-500 transition"
-          aria-label="Toggle Favorite"
-        >
-          {isFavorite ? (
-            <AiFillHeart /> // Filled heart icon for favorite
-          ) : (
-            <AiOutlineHeart /> // Outline heart icon for not favorite
-          )}
-        </button>
+            <button
+              onClick={handleToggleFavorite}
+              className=" text-2xl text-gray-500 hover:text-red-500 transition"
+              aria-label="Toggle Favorite"
+            >
+              {isFavorite ? (
+                <AiFillHeart /> // Filled heart icon for favorite
+              ) : (
+                <AiOutlineHeart /> // Outline heart icon for not favorite
+              )}
+            </button>
           </div>
         </div>
 
@@ -120,7 +152,9 @@ const ArtifactDetails = () => {
             <p className="text-gray-600">{artifactType}</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-700">Historical Context:</h3>
+            <h3 className="text-lg font-semibold text-gray-700">
+              Historical Context:
+            </h3>
             <p className="text-gray-600">{historicalContext}</p>
           </div>
           <div>
@@ -128,16 +162,23 @@ const ArtifactDetails = () => {
             <p className="text-gray-600">{createdAt}</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-700">Discovered At:</h3>
+            <h3 className="text-lg font-semibold text-gray-700">
+              Discovered At:
+            </h3>
             <p className="text-gray-600">{discoveredAt}</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-700">Discovered By:</h3>
+            <h3 className="text-lg font-semibold text-gray-700">
+              Discovered By:
+            </h3>
             <p className="text-gray-600">{discoveredBy}</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-700">Present Location:</h3>
+            <h3 className="text-lg font-semibold text-gray-700">
+              Present Location:
+            </h3>
             <p className="text-gray-600">{presentLocation}</p>
+            
           </div>
         </div>
 

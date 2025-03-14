@@ -1,15 +1,13 @@
-
-import { getAuth } from 'firebase/auth';
-import React from 'react';
-import Swal from 'sweetalert2';
+import { getAuth } from "firebase/auth";
+import React from "react";
+import Swal from "sweetalert2";
 
 const AddArtifacts = () => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    console.log(user);
+  const auth = getAuth();
+  const user = auth.currentUser;
+  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
-    
 
     const form = e.target;
     const artifactName = form.artifactName.value;
@@ -30,18 +28,18 @@ const AddArtifacts = () => {
       discoveredAt,
       discoveredBy,
       presentLocation,
-    //   addedByName: user.displayName,
-    //   addedByEmail: user.email,
+      //   addedByName: user.displayName,
+      //   addedByEmail: user.email,
       addedAt: new Date().toISOString(),
-      createdBy : user.email
+      createdBy: user.email,
     };
 
     console.log(newArtifact);
 
-    fetch('https://artifacts-server-site.vercel.app/artifacts', {
-      method: 'POST',
+    fetch("https://artifacts-server-site.vercel.app/artifacts", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newArtifact),
     })
@@ -49,10 +47,10 @@ const AddArtifacts = () => {
       .then((data) => {
         if (data.insertedId) {
           Swal.fire({
-            title: 'Success!',
-            text: 'Artifact added successfully!',
-            icon: 'success',
-            confirmButtonText: 'Cool',
+            title: "Success!",
+            text: "Artifact added successfully!",
+            icon: "success",
+            confirmButtonText: "Cool",
           });
         }
       });
@@ -153,15 +151,14 @@ const AddArtifacts = () => {
           <div className="md:w-1/2">
             <input
               className="input input-bordered w-full"
-            //   value={user.displayName || ''}
+              //   value={user.displayName || ''}
               placeholder="Your Name"
-              
             />
           </div>
           <div className="md:w-1/2">
             <input
               className="input input-bordered w-full"
-              defaultValue={user?.email || ''}
+              defaultValue={user?.email || ""}
               placeholder="Your Email"
               readOnly
             />

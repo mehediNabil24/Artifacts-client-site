@@ -3,7 +3,7 @@ import { FaStar, FaFacebook, FaGoogle } from "react-icons/fa";
 
 const InfoSection = () => {
   return (
-    <div className="bg-blue-900 text-white py-8">
+    <div className="bg-blue-900 text-white py-8 mb-10">
       <div className="container mx-auto px-4">
         {/* Main Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
