@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import styles
-import image2 from "../../assets/artifacts-6932555_640.jpg";
+import image2 from "../../assets/clock.jpg";
 import image1 from "../../../public/slide1.jpg";
 
 const images = [
