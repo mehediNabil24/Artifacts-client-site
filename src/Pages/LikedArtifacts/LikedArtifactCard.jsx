@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const LikedArtifactCard = ({ artifact }) => {
-  const { _id, artifactName, artifactImage, historicalContext } = artifact;
+  const { _id, artifactName, artifactImage,historicalContext } = artifact;
 
   return (
     <div className="card bg-base-200 shadow-xl hover:bg-base-300">
@@ -13,11 +13,11 @@ const LikedArtifactCard = ({ artifact }) => {
           alt={artifactName}
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body p-4">
         <h2 className="card-title">{artifactName}</h2>
-        <p>{historicalContext}</p>
+        <p className="text-red-300">{historicalContext}</p>
         <div className="flex justify-between items-center ">
-          <NavLink className={"btn"} to={`/artifactDetails/${_id}`}>
+          <NavLink className={"btn bg-gray-300"} to={`/artifactDetails/${_id}`}>
             Artifact Details
           </NavLink>
         </div>

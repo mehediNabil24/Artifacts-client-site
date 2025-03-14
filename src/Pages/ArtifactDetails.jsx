@@ -185,7 +185,7 @@ const ArtifactDetails = () => {
         {/* Back Button */}
         <div className="mt-6 text-center">
           <button
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+            className="bg-[#F3D0D7] text-black px-6 py-2 rounded-lg hover:bg-blue-600 transition"
             onClick={() => window.history.back()}
           >
             Go Back

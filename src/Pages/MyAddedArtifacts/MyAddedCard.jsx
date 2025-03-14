@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
-  const { _id, artifactName, artifactImage, historicalContext, artifactType } =
+  const { _id, artifactName, artifactImage, historicalContext, artifactType,createdAt,discoveredAt, discoveredBy, presentLocation } =
     artifact;
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -115,7 +115,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
           >
             Update
           </button>
-          <button onClick={() => handleDelete(_id)} className="btn btn-warning">
+          <button onClick={() => handleDelete(_id)} className="btn bg-[#F3D0D7]">
             Delete
           </button>
         </div>
@@ -139,6 +139,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                       className="input input-bordered w-full"
                       name="artifactName"
                       placeholder="Artifact Name"
+                      defaultValue={artifactName}
                       required
                     />
                   </div>
@@ -147,6 +148,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                       className="input input-bordered w-full"
                       name="artifactImage"
                       placeholder="Artifact Image URL"
+                      defaultValue={artifactImage}
                       type="url"
                       required
                     />
@@ -158,6 +160,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                   <select
                     className="input input-bordered w-full"
                     name="artifactType"
+                    defaultValue={artifactType}
                     required
                   >
                     <option value="">Select Artifact Type</option>
@@ -174,6 +177,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                     className="textarea textarea-bordered w-full"
                     name="historicalContext"
                     placeholder="Historical Context"
+                    defaultValue={historicalContext}
                     required
                   />
                 </div>
@@ -185,6 +189,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                       className="input input-bordered w-full"
                       name="createdAt"
                       placeholder="Created At (e.g., 100 BC)"
+                      defaultValue={createdAt}
                       required
                     />
                   </div>
@@ -193,6 +198,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                       className="input input-bordered w-full"
                       name="discoveredAt"
                       placeholder="Discovered At (e.g., 1799)"
+                      defaultValue={discoveredAt}
                       required
                     />
                   </div>
@@ -204,6 +210,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                     <input
                       className="input input-bordered w-full"
                       name="discoveredBy"
+                      defaultValue={discoveredBy}
                       placeholder="Discovered By"
                       required
                     />
@@ -213,6 +220,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
                       className="input input-bordered w-full"
                       name="presentLocation"
                       placeholder="Present Location"
+                      defaultValue={presentLocation}
                       required
                     />
                   </div>
