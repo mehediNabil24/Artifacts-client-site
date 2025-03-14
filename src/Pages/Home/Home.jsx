@@ -5,6 +5,7 @@ import ArtifactCard from "../ArtifactCard";
 import Features from "./Features";
 import InfoSection from "./InfoSection";
 import Gallery from "./Gallery";
+import SectionTitle from "../../Shared/SectionTitle";
 
 const Home = () => {
   const [artifacts, setArtifacts] = useState();
@@ -29,7 +30,8 @@ const Home = () => {
 
       {/* ✅ All other content will be centered */}
       <div className="w-11/12 mx-auto">
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-10 my-10 md:p-10 md: p-4">
+      <SectionTitle heading={"Most Liked Artifacts"} subheading={"Explore Our Popular Artifacts"}></SectionTitle>
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-10 mt-10 md:pt-10 md: p-4">
           {artifacts?.slice(0, 6).map((artifact) => (
             <ArtifactCard key={artifact._id} artifact={artifact} />
           ))}

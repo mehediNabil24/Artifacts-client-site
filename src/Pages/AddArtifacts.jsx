@@ -57,7 +57,7 @@ const AddArtifacts = () => {
   };
 
   return (
-    <div className="bg-gray-200 md:p-24 p-8">
+    <div className="bg-[#F0EBE3] md:p-24 p-8">
       <h2 className="font-bold text-3xl">Add an Artifact</h2>
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* Artifact Name and Image */}

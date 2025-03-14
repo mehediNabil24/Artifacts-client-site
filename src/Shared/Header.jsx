@@ -80,7 +80,7 @@ const Header = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content menu bg-slate-500 rounded-box z-50 w-52 p-2 shadow"
+                  className="dropdown-content menu bg-[#F0EBE3] rounded-box z-50 w-52 p-2 shadow"
                 >
                   <li>
                     <Link to={`/myAddedArtifacts/${createdBy}`}>My Added Artifacts</Link>

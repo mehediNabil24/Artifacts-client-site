@@ -1,9 +1,12 @@
 import React from "react";
 import { FaStar, FaFacebook, FaGoogle } from "react-icons/fa";
+import SectionTitle from "../../Shared/SectionTitle";
 
 const InfoSection = () => {
   return (
-    <div className="bg-blue-900 text-white py-8 mb-10">
+    <div>
+      <SectionTitle heading={"Our Stats"} subheading={"Our Success Number"}></SectionTitle>
+    <div className="bg-[#FFEFEF] text-black py-8 my-10">
       <div className="container mx-auto px-4">
         {/* Main Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -43,6 +46,7 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

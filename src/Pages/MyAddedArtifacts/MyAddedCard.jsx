@@ -97,7 +97,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
     <div className="card bg-base-100  shadow-xl">
       <figure>
         <img
-          className="w-full h-[350px] object-cover"
+          className="w-full h-[250px] object-cover p-6"
           src={artifactImage}
           alt="Visa pic"
         />
@@ -111,7 +111,7 @@ const MyAddedCard = ({ artifacts, artifact, setArtifacts }) => {
         <div className="card-actions justify-end">
           <button
             onClick={() => document.getElementById(_id).showModal()}
-            className="btn btn-accent"
+            className="btn bg-[#EBE8DB]"
           >
             Update
           </button>

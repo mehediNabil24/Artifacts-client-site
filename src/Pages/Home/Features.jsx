@@ -1,4 +1,5 @@
 import React from "react";
+import SectionTitle from "../../Shared/SectionTitle";
 
 const Features = () => {
   const features = [
@@ -41,15 +42,13 @@ const Features = () => {
   ];
 
   return (
+    <div>
+      <SectionTitle heading={"  Why Explore Our Artifacts?"} subheading={"Discover the stories of the past through our comprehensive collection"}></SectionTitle>
+
+    
     <section className="bg-gray-100 py-12">
       <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Why Explore Our Artifacts?
-        </h2>
-        <p className="text-center text-gray-600 mb-12">
-          Discover the stories of the past through our comprehensive collection
-          of artifacts and resources.
-        </p>
+       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
@@ -68,6 +67,7 @@ const Features = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

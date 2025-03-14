@@ -5,10 +5,10 @@ const LikedArtifactCard = ({ artifact }) => {
   const { _id, artifactName, artifactImage, historicalContext } = artifact;
 
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card bg-base-200 shadow-xl hover:bg-base-300">
       <figure>
         <img
-          className="aspect-[3/4] object-cover"
+          className=" h-[250px] object-cover p-6"
           src={artifactImage}
           alt={artifactName}
         />
@@ -16,7 +16,7 @@ const LikedArtifactCard = ({ artifact }) => {
       <div className="card-body">
         <h2 className="card-title">{artifactName}</h2>
         <p>{historicalContext}</p>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center ">
           <NavLink className={"btn"} to={`/artifactDetails/${_id}`}>
             Artifact Details
           </NavLink>
