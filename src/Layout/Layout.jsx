@@ -7,7 +7,7 @@ import Footer from "../Shared/Footer";
 const Layout = () => {
   return (
     <div>
-      <section className="  bg-[#356a91]">
+      <section  className="  bg-[#356a91] mb-[100px]">
         <Header></Header>
       </section>
       <section className="w-11/12 mx-auto">
