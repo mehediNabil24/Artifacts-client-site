@@ -42,7 +42,7 @@ const Banner = () => {
           <div key={index} className="relative">
             <img
               src={item.src}
-              className="w-full h-auto md:h-[500px] object-cover"
+              className="w-full h-[300px] md:h-[500px] object-cover"
               alt={item.title}
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
